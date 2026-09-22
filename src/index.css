@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0B0B0F 0%, #0A1A2F 50%, #0B0B0F 100%);
+    color: white;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0B0B0F;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #F5D76E, #FFA500);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FFA500;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply px-8 py-3 bg-gradient-to-r from-moon to-yellow-500 text-black font-bold rounded-full 
+           hover:shadow-lg hover:shadow-moon/30 transform hover:scale-105 
+           transition-all duration-300 flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-8 py-3 border-2 border-moon text-moon font-bold rounded-full 
+           hover:bg-moon hover:text-black transition-all duration-300 
+           transform hover:scale-105;
+  }
+
+  .card {
+    @apply bg-gradient-to-br from-deep/50 to-black/50 backdrop-blur-sm 
+           rounded-xl border border-moon/20 hover:border-moon/50 
+           transition-all duration-300 hover:transform hover:-translate-y-2;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-orbitron font-bold mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-gray-300 max-w-3xl mx-auto text-lg;
+  }
+
+  .divider {
+    @apply w-24 h-1 bg-gradient-to-r from-moon to-yellow-500 mx-auto mb-6;
+  }
+}
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 20px rgba(245, 215, 110, 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 15px rgba(245, 215, 110, 0.3);
+  }
+  
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(245, 215, 110, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 215, 110, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #F5D76E 0%, #FFA500 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+/* Custom Scrollbar for Admin */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(245, 215, 110, 0.2);
+    border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(245, 215, 110, 0.4);
+}
